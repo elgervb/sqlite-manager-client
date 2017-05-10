@@ -1,0 +1,6 @@
+<aside class="offcanvas" [class.offcanvas--closed]="closed">
+  <i class="offcanvas__close" (click)="close()">&times;</i>
+  <div class="offcanvas__handle" (click)="open()"></div>
+
+  <ng-content></ng-content>
+</aside>

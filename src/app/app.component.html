@@ -1,3 +1,40 @@
-<h1>
-  {{title}}
-</h1>
+
+<header class="app__header">
+  <h1>
+    {{title}}
+  </h1>
+</header>
+
+<main class="app__main">
+  <app-offcanvas [closed]="false">
+
+    <nav class="menu menu--vertical">
+
+      <ul class="menu__group">
+        <li class="menu__group__title"> title 1</li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 1</a> </li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 2</a> </li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 3</a> </li>
+      </ul>
+
+      <ul class="menu__group">
+        <li class="menu__group__title"> title 2</li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 1</a> </li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 2</a> </li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 3</a> </li>
+        <li class="menu__item"> <a href="" class="menu__item__link">Link 4</a> </li>
+      </ul>
+
+    </nav>
+
+  </app-offcanvas>
+
+  <section>
+    <b>Main</b>
+  </section>
+
+</main>
+
+<footer class="app__footer">
+  <i>footer</i>
+</footer>

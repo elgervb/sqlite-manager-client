@@ -1,0 +1,43 @@
+@import './src/scss/color-palette';
+@import './src/scss/variables';
+
+.offcanvas {
+  background-color: $blue-regular;
+  color: $white-regular;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 25rem;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  transition: transform $animation-duration $animation-easing;
+}
+.offcanvas__close {
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: 300;
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+}
+.offcanvas__handle {
+  background-color: $blue-regular;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  display: none;
+  height: 2em;
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1em;
+}
+
+.offcanvas--closed {
+  transform: translateX(-100%);
+
+  .offcanvas__handle {
+    display: block;
+  }
+}
