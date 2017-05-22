@@ -1,4 +1,4 @@
-<div *ngIf="show" class="overlay slideIn">
+<div *ngIf="show" [ngClass]="['overlay', effect]">
   <a class="overlay__close" (click)="close()">&times;</a>
   <ng-content></ng-content>
 </div>
