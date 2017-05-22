@@ -4,9 +4,11 @@
 @import 'scss/variables';
 @import 'scss/reset';
 
+@import 'scss/animations';
+@import 'scss/scrollbars';
+
 .container--fullscreen {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
 }
