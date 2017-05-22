@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'scss/color-palette';
-@import 'scss/variables';
-@import 'scss/reset';
+@import 'scss/base/all';
 
-@import 'scss/animations';
-@import 'scss/scrollbars';
+@import 'scss/layout/scrollbars';
 
 .container--fullscreen {
   display: flex;
