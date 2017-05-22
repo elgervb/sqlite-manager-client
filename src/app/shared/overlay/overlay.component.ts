@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-overlay',
@@ -6,8 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./overlay.component.scss']
 })
 export class OverlayComponent implements OnInit {
+  /**
+   * Whether or not to show the overlay
+   */
   @Input() show = false;
+  /**
+   * Any valid class name for in effect
+   */
   @Input() effect: string;
+
+  @Output() onClose = new EventEmitter();
 
   constructor() { }
 
@@ -17,6 +25,7 @@ export class OverlayComponent implements OnInit {
 
   close(): void {
     this.show = false;
+    this.onClose.emit();
   }
 
 }

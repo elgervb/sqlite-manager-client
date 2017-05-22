@@ -29,7 +29,8 @@
   </app-offcanvas>
 
   <section>
-    <app-overlay [show]="true" [effect]="'fadeIn'"></app-overlay>
+    <button (click)="showOverlay()">Show overlay</button>
+    <app-overlay [show]="overlay" [effect]="'fadeIn'" (onClose)="overlayClosed()"></app-overlay>
     <app-spinner [position]="'center'"></app-spinner>
   </section>
 

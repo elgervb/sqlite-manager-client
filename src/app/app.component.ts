@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Title';
+  overlay = false;
+
+  closed() {
+    console.log('overlay closed');
+  }
+
+  showOverlay(): boolean {
+    return this.overlay = true;
+  }
+  overlayClosed(): void {
+    // this.overlay = false;
+  }
 }
