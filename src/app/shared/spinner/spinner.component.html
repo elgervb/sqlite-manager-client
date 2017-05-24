@@ -1,3 +1,5 @@
-<div class='spinner' [class.spinner--centered]="position=='center'">
+<div class='spinner' [class.spinner--centered]="position=='center'" [ngClass]="[sizeCssClass]">
   <div class="spinner-inner"></div>
 </div>
+
+{{size}} -- {{position}}

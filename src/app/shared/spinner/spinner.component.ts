@@ -7,4 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class SpinnerComponent {
   @Input() position: string;
+  @Input() size: string;
+
+  get sizeCssClass() {
+    debugger;
+    if (this.size) {
+      return `spinner--${this.size}`;
+    }
+    return '';
+  }
 }

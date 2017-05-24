@@ -9,14 +9,14 @@
 
 .spinner {
   background: none;
-  height: 160px;
+  height: 48px;
   position: relative;
-  width: 160px;
+  width: 48px;
 
   .spinner-inner {
     animation: spinning 1s linear infinite;
     border-radius: 50%;
-    box-shadow: 0 6px 0 0 #3498DB;
+    box-shadow: 0 4px 0 0 #3498DB;
     display: block;
     height: 98%;
     left: 1%;
@@ -30,4 +30,29 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.spinner--small {
+  height: 16px;
+  width: 16px;
+
+  .spinner-inner {
+    box-shadow: 0 2px 0 0 #3498DB;
+  }
+}
+.spinner--medium {
+  height: 32px;
+  width: 32px;
+
+  .spinner-inner {
+    box-shadow: 0 4px 0 0 #3498DB;
+  }
+}
+.spinner--large {
+  height: 96px;
+  width: 96px;
+}
+.spinner--xlarge {
+  height: 160px;
+  width: 160px;
 }

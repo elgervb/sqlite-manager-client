@@ -30,8 +30,9 @@
 
   <section>
     <button (click)="showOverlay()">Show overlay</button>
-    <app-overlay [show]="overlay" [effect]="'fadeIn'" (onClose)="overlayClosed()"></app-overlay>
-    <app-spinner [position]="'center'"></app-spinner>
+    <app-overlay [show]="overlay" [effect]="'slideUp'" (onClose)="overlayClosed()"></app-overlay>
+
+    <app-spinner [position]="'center'" [size]="'xlarge'"></app-spinner>
   </section>
 
 </main>
