@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Title';
+  title = 'Components';
   overlay = false;
 
   closed() {
@@ -17,6 +17,6 @@ export class AppComponent {
     return this.overlay = true;
   }
   overlayClosed(): void {
-    // this.overlay = false;
+    this.overlay = false;
   }
 }

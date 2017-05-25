@@ -8,7 +8,8 @@ describe('OverlayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OverlayComponent ]
+      declarations: [ OverlayComponent ],
+      imports: []
     })
     .compileComponents();
   }));

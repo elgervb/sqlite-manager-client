@@ -1,4 +1,4 @@
-<div *ngIf="show" [ngClass]="['overlay', effect]">
+<div *ngIf="show" [ngClass]="['overlay', effect]" (keyup.enter)="close()">
   <a class="overlay__close" (click)="close()">&times;</a>
   <ng-content></ng-content>
 </div>
