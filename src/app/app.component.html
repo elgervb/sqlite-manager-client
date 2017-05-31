@@ -5,7 +5,7 @@
 </header>
 
 <main class="app__main">
-  <app-offcanvas [closed]="false">
+  <app-offcanvas [closed]="true">
 
     <nav class="menu menu--vertical">
 
@@ -32,6 +32,10 @@
     <button (click)="showOverlay()">Show overlay {{overlay}}</button>
     <app-overlay [show]="overlay" [effect]="'fadeIn'" (onClose)="overlayClosed()"></app-overlay>
     <app-spinner [position]="'center'"></app-spinner>
+  </section>
+
+  <section>
+    <app-popover [location]="'right'">popover content</app-popover>
   </section>
 
 </main>

@@ -12,6 +12,7 @@ import { PopoverComponent } from './popover/popover.component';
   exports: [
     OffcanvasComponent,
     OverlayComponent,
+    PopoverComponent,
     SpinnerComponent
   ],
   declarations: [OffcanvasComponent, SpinnerComponent, OverlayComponent, PopoverComponent]

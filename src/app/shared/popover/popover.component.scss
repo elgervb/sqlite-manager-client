@@ -26,6 +26,7 @@ $popoverArrowSize: 14px !default;
     right: 0;
     transition: all .2s ease-out;
     visibility: hidden;
+    width: 100%;
     z-index: 999;
 
     & > p:last-child {
@@ -54,10 +55,11 @@ $popoverArrowSize: 14px !default;
   }
 
   &.bottom .hover{
-    bottom:auto;
-    left:0;
-    right:0;
-    top:100%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin-top: .5rem;
+    top: 100%;
 
     &:before, &:after { // Arrow
       border-top: ($popoverArrowSize / 2) solid transparent;
@@ -109,9 +111,9 @@ $popoverArrowSize: 14px !default;
   &.right .hover{
     bottom: auto;
     left: 100%;
-    margin-left: 10px;
+    margin-left: .5rem;
     right: auto;
-    top: 0;
+    top: 50%;
     transform: translateY(-50%);
 
     &:before, &:after { // Arrow
