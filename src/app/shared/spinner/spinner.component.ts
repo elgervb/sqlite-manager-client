@@ -10,7 +10,6 @@ export class SpinnerComponent {
   @Input() size: string;
 
   get sizeCssClass() {
-    debugger;
     if (this.size) {
       return `spinner--${this.size}`;
     }
