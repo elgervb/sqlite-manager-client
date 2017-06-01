@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { StorageService } from './core/storage/storage.service';
 
+export const storageFactory = () => new StorageService(sessionStorage, 15 * 60);
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { StorageService } from './core/storage/storage.service';
   providers: [
     {
       provide: StorageService,
-      useFactory: () => new StorageService(sessionStorage, 15 * 60)
+      useFactory: storageFactory
     }
   ],
   bootstrap: [AppComponent]
