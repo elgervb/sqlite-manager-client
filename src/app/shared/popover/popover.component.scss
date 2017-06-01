@@ -17,7 +17,7 @@ $popoverArrowSize: 14px !default;
     border-color: $popoverBorderColor;
     bottom: 100%;
     box-shadow: inset 0 0 0 1px rgba(white, .9), 0 1px 2px rgba(black, .1);
-    max-width: 250px;
+    max-width: 10em;
     left: 0;
     list-style: none;
     opacity: 0;
@@ -28,6 +28,14 @@ $popoverArrowSize: 14px !default;
     visibility: hidden;
     width: 100%;
     z-index: 999;
+
+    &.medium {
+      max-width: 30em;
+    }
+
+    &.large {
+      max-width: 60em;
+    }
 
     & > p:last-child {
       padding-bottom: 0;
