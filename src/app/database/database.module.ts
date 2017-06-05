@@ -4,13 +4,14 @@ import { DatabaseService } from './database.service';
 
 import { DatabaseRoutingModule } from './database-routing.module';
 import { DatabaseComponent } from './database/database.component';
+import { DatabaseNavigationComponent } from './database-navigation/database-navigation.component';
 
 @NgModule({
   imports: [
     CommonModule,
     DatabaseRoutingModule
   ],
-  declarations: [DatabaseComponent],
+  declarations: [DatabaseComponent, DatabaseNavigationComponent],
   providers: [
     DatabaseService
   ]
