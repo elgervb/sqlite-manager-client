@@ -3,31 +3,66 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
-import { StorageService } from './core/storage/storage.service';
+import { AppRoutingModule } from './app-routing.module';
 
-export const storageFactory = () => new StorageService(sessionStorage, 15 * 60);
+import { AppComponent } from './app.component';
+
+import { environment } from '../environments/environment';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
+import { RouterState, routerReducer, RouterStoreModule } from '@ngrx/router-store';
+import { databaseReducer } from './database/database.reducer';
+
+import { EffectsModule } from '@ngrx/effects';
+import { DatabaseEffects } from './database/database.effects';
+
+import { compose } from '@ngrx/core/compose';
+import { combineReducers, provideStore } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
+
+
+export interface AppState {
+  router: RouterState;
+};
+
+export function instrumentOptions() {
+  return {
+    monitor: useLogMonitor({ visible: false, position: 'right' })
+  };
+}
+
+const metaReducers = environment.production
+  ? [storeFreeze, combineReducers]
+  : [combineReducers];
+
+const store = compose(...metaReducers)({
+  database: databaseReducer,
+      router: routerReducer
+});
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     CoreModule,
+    EffectsModule.run(DatabaseEffects),
     FormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    StoreModule.provideStore({store}),
+    StoreDevtoolsModule.instrumentStore(instrumentOptions),
+    StoreLogMonitorModule,
+    RouterStoreModule.connectRouter()
   ],
   providers: [
-    {
-      provide: StorageService,
-      useFactory: storageFactory
-    }
   ],
   bootstrap: [AppComponent]
 })

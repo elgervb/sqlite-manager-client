@@ -29,13 +29,7 @@
   </app-offcanvas>
 
   <section>
-    <button (click)="showOverlay()">Show overlay {{overlay}}</button>
-    <app-overlay [show]="overlay" [effect]="'fadeIn'" (onClose)="overlayClosed()"></app-overlay>
-    <app-spinner [position]="'center'"></app-spinner>
-  </section>
-
-  <section>
-    <app-popover [location]="'right'">popover content</app-popover>
+    <router-outlet></router-outlet>
   </section>
 
 </main>
@@ -43,3 +37,5 @@
 <footer class="app__footer">
   <i>footer</i>
 </footer>
+
+<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>
