@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DatabaseModule } from './database/database.module';
 
-const routes: Routes = [
+export function loadModule(module) {
+  return module;
+}
+
+export const routes: Routes = [
   {
     path: 'database',
-    loadChildren: () => DatabaseModule
+    loadChildren: loadModule(DatabaseModule)
   },
   { path: '**', redirectTo: '/' }
 ];

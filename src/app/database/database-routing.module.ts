@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DatabaseComponent } from './database/database.component';
 import { DatabaseNavigationComponent } from './database-navigation/database-navigation.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: DatabaseComponent
