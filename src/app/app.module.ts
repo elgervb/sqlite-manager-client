@@ -28,6 +28,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 export interface AppState {
   router: RouterState;
+  database: any;
 };
 
 export function instrumentOptions() {
@@ -37,12 +38,12 @@ export function instrumentOptions() {
 }
 
 const metaReducers = environment.production
-  ? [storeFreeze, combineReducers]
-  : [combineReducers];
+  ? [combineReducers]
+  : [storeFreeze, combineReducers];
 
 const store = compose(...metaReducers)({
   database: databaseReducer,
-      router: routerReducer
+  router: routerReducer
 });
 
 @NgModule({
@@ -57,7 +58,7 @@ const store = compose(...metaReducers)({
     FormsModule,
     HttpModule,
     SharedModule,
-    StoreModule.provideStore({store}),
+    StoreModule.provideStore(store),
     StoreDevtoolsModule.instrumentStore(instrumentOptions),
     StoreLogMonitorModule,
     RouterStoreModule.connectRouter()

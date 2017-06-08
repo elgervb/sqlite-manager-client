@@ -9,31 +9,3 @@
 .app__footer {
   border-top: 1px solid blue;
 }
-.menu a{
-  color: #fff;
-}
-
-.menu__group {
-  padding-top: 1rem;
-
-  .menu__group__title {
-    font-weight: 600;
-    padding: 1rem 1rem .5rem 1rem;
-  }
-}
-.menu__item__link {
-  border: none;
-  display: block;
-  padding: .5rem 1rem;
-
-  &:hover {
-    background-color: rgba(0,0,0,.1);
-    border: none;
-  }
-}
-
-.menu--vertical {
-  .menu__item {
-    display: block;
-  }
-}

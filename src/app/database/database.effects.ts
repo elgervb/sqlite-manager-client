@@ -15,7 +15,7 @@ export class DatabaseEffects {
   @Effect() fetch$ = this.actions$
     .ofType(databaseActionType.fetch)
     .switchMap(
-      () => this.http.get('http://localhost:8080/database')
+      () => this.http.get('http://localhost:4000/database/countries')
       .map(res => ({type: databaseActionType.fetchSuccess, payload: res.json()}))
       .catch(() => Observable.of({type: databaseActionType.fetchFail}))
     );
