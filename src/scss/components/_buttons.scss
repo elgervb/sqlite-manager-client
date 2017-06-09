@@ -1,0 +1,183 @@
+/***************************
+ ********* BUTTONS *********
+ **************************/
+.btn, [class*='btn--'] {
+  appearance: none; // to override default mobile styling
+  background-color: $grey-regular;
+  border: none;
+  box-sizing: border-box;
+  color: $black-regular;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "open sans";
+  font-size: 1.16667em;
+  font-weight: 400;
+  line-height: normal;
+  margin: .25rem;
+  min-width: 5.6667rem;
+  outline: none;
+  overflow: visible;
+  padding: .5rem 1.4167rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+
+  @include transition(all);
+
+  &:hover, &:focus {
+    background-color: darken($grey-regular, $hover-darken);
+  }
+
+  &:active {
+    opacity: .5;
+  }
+}
+a.btn, a[class*='btn--'] {
+  color: $black-regular;
+  &:hover {
+    border: none;
+  }
+}
+
+.btn[disabled], .btn.disabled, [class*='btn--'][disabled], .disabled[class*='btn--'] {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
+}
+
+.btn--red, a.btn--red {
+  color: $font-color-light;
+  background: $red-regular;
+  border-color: darken($red-regular, $hover-darken);
+  &:hover {
+    background: darken($red-regular, $hover-darken);
+  }
+}
+
+.btn--blue, a.btn--blue {
+  color: $font-color-light;
+  background: $blue-regular;
+  border-color: darken($blue-regular, $hover-darken);
+  &:hover {
+    background: darken($blue-regular, $hover-darken);
+  }
+}
+
+.btn--green, a.btn--green {
+  color: $font-color-light;
+  background: $green-regular;
+  border-color: darken($green-regular, $hover-darken);
+  &:hover {
+    background: darken($green-regular, $hover-darken);
+  }
+}
+
+.btn--turquoise, a.btn--turquoise {
+  color: $font-color-light;
+  background: $turquoise-regular;
+  border-color: darken($turquoise-regular, $hover-darken);
+  &:hover {
+    background: darken($turquoise-regular, $hover-darken);
+  }
+}
+
+.btn--orange, a.btn--orange {
+  color: $font-color-light;
+  background: $orange-regular;
+  border-color: darken($orange-regular, $hover-darken);
+  &:hover {
+    background: darken($orange-regular, $hover-darken);
+  }
+}
+
+.btn--purple, a.btn--purple {
+  color: $font-color-light;
+  background: $purple-regular;
+  border-color: darken($purple-regular, $hover-darken);
+  &:hover {
+    background: darken($purple-regular, $hover-darken);
+  }
+}
+
+.btn--yellow, a.btn--yellow {
+  color: $font-color-light;
+  background: $yellow-regular;
+  border-color: darken($yellow-regular, $hover-darken);
+  &:hover {
+    background: darken($yellow-regular, $hover-darken);
+  }
+}
+
+.btn--pill {
+  border-radius: 3.125rem;
+}
+
+.btn--large {
+  font-size: 1.5em;
+}
+
+.btn--small {
+  font-size: .8em;
+}
+
+.btn--tiny {
+  font-size: .6em;
+}
+
+.wrap-btn {
+  background: #e3e3e3;
+  background: linear-gradient(to bottom, #e3e3e3 0%,#f2f2f2 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 0.1875rem rgba(0, 0, 0, 0.04) inset;
+  display: inline-block;
+  padding: 10px;
+
+  @include transition(all);
+
+  &.small{
+    padding: 5px;
+  }
+  &.small .btn--circle{
+    border-width: 2px;
+    font-size: .6em;
+    height: 60px;
+    padding: 2px; // same as border-width
+    width: 60px;
+  }
+  &.small a.btn--circle{
+    line-height: 6;
+  }
+}
+.btn--circle {
+  border-radius: 50%;
+  border-width: 4px;
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1.125em;
+  height: 120px;
+  min-width: 0;
+  padding: 4px; // same as border-width
+  width: 120px;
+}
+a.btn--circle{
+  line-height: 6.8;
+  padding: 0;
+}
+
+.button-group{
+  padding: 10px 0;
+}
+.btn--link{
+  background: transparent;
+  border: 1px solid transparent;
+  color: #4082a0;
+  margin: 7px 23px;
+  padding: 2px;
+  transition: border .3s ease-out 0s;
+
+  &:hover{
+    background: transparent;
+    border-bottom: 1px solid #4082a0;
+  }
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from '../database.service';
 import { Observable } from 'rxjs/Observable';
 import { Database } from '../database.models';
-import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-database',
@@ -15,11 +15,6 @@ export class DatabaseComponent implements OnInit {
 
   ngOnInit() {
     this.database$ = this.databaseService.getDatabase('counties');
-
-    this.database$.subscribe((d) => {
-      console.log(d);
-    });
-    this.databaseService.getDatabase('counties');
   }
 
 }

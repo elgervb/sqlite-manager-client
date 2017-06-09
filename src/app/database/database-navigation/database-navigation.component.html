@@ -1,12 +1,23 @@
 <ul class="menu__group">
   <li class="menu__group__title"> Database navigation</li>
   <li class="menu__item">
-    <a href="" class="menu__item__link">Tables</a>
+    <a href="" class="menu__item__link stretched">Tables
+      <span class="badge badge--inline">{{(database$ | async)?.tableCount}}</span>
+    </a>
   </li>
   <li class="menu__item">
-    <a href="" class="menu__item__link">Indexes</a>
+    <a href="" class="menu__item__link stretched">Indexes
+      <span class="badge badge--inline">{{(database$ | async)?.indexCount}}</span>
+    </a>
   </li>
   <li class="menu__item">
-    <a href="" class="menu__item__link">Data</a>
+    <a href="" class="menu__item__link stretched">Views
+      <span class="badge badge--inline">{{(database$ | async)?.viewCount}}</span>
+    </a>
+  </li>
+  <li class="menu__item">
+    <a href="" class="menu__item__link stretched">Triggers
+      <span class="badge badge--inline">{{(database$ | async)?.triggerCount}}</span>
+    </a>
   </li>
 </ul>
