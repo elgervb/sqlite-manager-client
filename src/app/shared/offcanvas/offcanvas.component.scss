@@ -31,6 +31,8 @@
   top: 50%;
   transform: translateY(-50%);
   width: 1em;
+
+
 }
 
 .offcanvas--closed {
@@ -38,5 +40,13 @@
 
   .offcanvas__handle {
     display: block;
+
+    &::after {
+      color: $white-regular;
+      content: '»';
+      font-size: 1.3em;
+      position: absolute;
+      top: .3rem;
+    }
   }
 }
