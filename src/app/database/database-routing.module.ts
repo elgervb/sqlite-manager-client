@@ -5,7 +5,7 @@ import { DatabaseNavigationComponent } from './database-navigation/database-navi
 
 export const routes: Routes = [
   {
-    path: '',
+    path: ':name',
     component: DatabaseComponent
   },
   {

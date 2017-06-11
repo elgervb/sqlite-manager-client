@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from '../database.service';
 import { Observable } from 'rxjs/Observable';
 import { Database } from '../database.models';
@@ -11,10 +12,13 @@ import { Database } from '../database.models';
 export class DatabaseComponent implements OnInit {
   private database$: Observable<Database>;
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private databaseService: DatabaseService
+  ) { }
 
   ngOnInit() {
-    this.database$ = this.databaseService.getDatabase('counties');
+    this.database$ = this.databaseService.getDatabase(this.route.snapshot.params.name);
   }
 
 }
