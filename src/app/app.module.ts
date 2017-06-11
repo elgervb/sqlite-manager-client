@@ -25,10 +25,11 @@ import { compose } from '@ngrx/core/compose';
 import { combineReducers, provideStore } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 
+import { Database } from './database/database.models';
 
 export interface AppState {
   router: RouterState;
-  database: any;
+  database: Database;
 };
 
 export function instrumentOptions() {
