@@ -52,7 +52,7 @@ export const store = compose(...metaReducers)({
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     AppRoutingModule,

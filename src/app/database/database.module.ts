@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from 'app/shared/shared.module';
 import { DatabaseService } from './database.service';
 
 import { DatabaseRoutingModule } from './database-routing.module';
@@ -9,7 +10,8 @@ import { DatabaseNavigationComponent } from './database-navigation/database-navi
 @NgModule({
   imports: [
     CommonModule,
-    DatabaseRoutingModule
+    DatabaseRoutingModule,
+    SharedModule
   ],
   declarations: [DatabaseComponent, DatabaseNavigationComponent],
   providers: [
