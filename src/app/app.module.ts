@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 import { RouterState, routerReducer, RouterStoreModule } from '@ngrx/router-store';
 import { databaseReducer } from './database/database.reducer';
+import { databaseNamesReducer } from './database/database-names.reducer';
 
 import { EffectsModule } from '@ngrx/effects';
 import { DatabaseEffects } from './database/database.effects';
@@ -30,6 +31,7 @@ import { Database } from './database/database.models';
 export interface AppState {
   router: RouterState;
   database: Database;
+  databaseNames: string[];
 };
 
 export function instrumentOptions() {
@@ -42,8 +44,9 @@ const metaReducers = environment.production
   ? [combineReducers]
   : [storeFreeze, combineReducers];
 
-const store = compose(...metaReducers)({
+export const store = compose(...metaReducers)({
   database: databaseReducer,
+  databaseNames: databaseNamesReducer,
   router: routerReducer
 });
 

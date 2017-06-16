@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
+  @HostBinding('class.parent') someField = true;
+
   title = 'Components';
   overlay = false;
 

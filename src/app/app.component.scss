@@ -1,11 +1,27 @@
-.app__header {
-  border-bottom: 1px solid blue;
+@import 'src/scss/base/all';
+
+.parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.app__sidebar {
+  background-color: $grey-darker;
+  color: $white-regular;
+  height: 100vh;
+  flex: 0 0 14rem;
+}
+
+.app__wrapper {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
 }
 
 .app__main {
   flex: 2;
 }
 
-.app__footer {
-  border-top: 1px solid blue;
+.app__header {
+  border-bottom: 1px solid blue;
 }

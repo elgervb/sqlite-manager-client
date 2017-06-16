@@ -1,6 +1,4 @@
-.menu a{
-  color: #fff;
-}
+@import 'src/scss/base/all';
 
 .menu__group {
   padding-top: 1rem;
@@ -10,9 +8,10 @@
     padding: 1rem 1rem .5rem 1rem;
   }
 }
-.menu__item__link {
+.menu__item__link, .menu__item__link:active, .menu__item__link:visited {
   align-items: center;
   border: none;
+  color: $white-regular;
   display: flex;
   padding: .5rem 1rem;
 
@@ -23,7 +22,6 @@
 
   &.stretched {
     justify-content: space-between;
-
   }
 }
 

@@ -1,33 +1,34 @@
-<header class="app__header">
-  <h1>
-    {{title}}
-  </h1>
-</header>
+<aside class="app__sidebar">
+  <nav class=" menu menu--vertical">
+    <router-outlet name="offcanvas"></router-outlet>
+  </nav>
+</aside>
 
-<main class="app__main">
-  <app-offcanvas [closed]="true">
+<section class="app__wrapper">
+  <header class="app__header">
+    <h1>
+      {{title}}
+    </h1>
+  </header>
 
-    <nav class="menu menu--vertical">
+  <main class="app__main">
+    <app-offcanvas [closed]="true">
 
-      <ul class="menu__group">
-        <li class="menu__group__title"> Database</li>
-        <li class="menu__item"> <a routerLink="/database/countries" class="menu__item__link">countries</a> </li>
-      </ul>
+      <nav class="menu menu--vertical">
 
-      <router-outlet name="offcanvas"></router-outlet>
+        <ul class="menu__group">
+          <li class="menu__group__title"> Database</li>
+          <li class="menu__item"> <a routerLink="/database/countries" class="menu__item__link">countries</a> </li>
+        </ul>
 
-    </nav>
+      </nav>
 
-  </app-offcanvas>
+    </app-offcanvas>
 
-  <section>
-    <router-outlet></router-outlet>
-  </section>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
 
-</main>
-
-<footer class="app__footer">
-  <i>footer</i>
-</footer>
-
+  </main>
+</section>
 <ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>
