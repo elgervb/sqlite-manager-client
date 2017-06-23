@@ -4,7 +4,7 @@ import { databaseActionType } from './database.actiontype';
 
 export function databaseNamesReducer(state: Database[], action: Action) {
   switch (action.type) {
-    case databaseActionType.fetchSuccess :
+    case databaseActionType.fetchNamesSuccess :
       return action.payload;
 
     default:

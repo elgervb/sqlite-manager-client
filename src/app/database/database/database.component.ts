@@ -10,6 +10,7 @@ import { Database } from '../database.models';
   styleUrls: ['./database.component.scss']
 })
 export class DatabaseComponent implements OnInit {
+  private databaseNames$: Observable<string[]>;
   private database$: Observable<Database>;
 
   constructor(
@@ -18,6 +19,7 @@ export class DatabaseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.databaseNames$ = this.databaseService.getDatabaseNames();
     this.database$ = this.databaseService.getDatabase(this.route.snapshot.params.name);
   }
 

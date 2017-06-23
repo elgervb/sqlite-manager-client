@@ -25,8 +25,8 @@ export class DatabaseEffects {
     .ofType(databaseActionType.fetchNames)
     .switchMap(
       () => this.http.get('http://localhost:4000/database')
-      .map(res => ({type: databaseActionType.fetchSuccess, payload: res.json()}))
-      .catch(() => Observable.of({type: databaseActionType.fetchFail}))
+      .map(res => ({type: databaseActionType.fetchNamesSuccess, payload: res.json()}))
+      .catch(() => Observable.of({type: databaseActionType.fetchNamesFail}))
     );
 
   constructor(
