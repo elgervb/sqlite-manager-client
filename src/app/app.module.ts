@@ -10,23 +10,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { environment } from '../environments/environment';
-
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
-import { RouterState, routerReducer, RouterStoreModule } from '@ngrx/router-store';
-import { databaseReducer } from './database/database.reducer';
-import { databaseNamesReducer } from './database/database-names.reducer';
+import { RouterState, RouterStoreModule } from '@ngrx/router-store';
 
 import { EffectsModule } from '@ngrx/effects';
 import { DatabaseEffects } from './database/database.effects';
-
-import { compose } from '@ngrx/core/compose';
-import { combineReducers, provideStore } from '@ngrx/store';
-import { storeFreeze } from 'ngrx-store-freeze';
-
 import { Database } from './database/database.models';
+
+import { reducer } from './app.reducers';
 
 export interface AppState {
   router: RouterState;
@@ -40,16 +33,6 @@ export function instrumentOptions() {
   };
 }
 
-const metaReducers = environment.production
-  ? [combineReducers]
-  : [storeFreeze, combineReducers];
-
-export const store = compose(...metaReducers)({
-  database: databaseReducer,
-  databaseNames: databaseNamesReducer,
-  router: routerReducer
-});
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +45,7 @@ export const store = compose(...metaReducers)({
     FormsModule,
     HttpModule,
     SharedModule,
-    StoreModule.provideStore(store),
+    StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentStore(instrumentOptions),
     StoreLogMonitorModule,
     RouterStoreModule.connectRouter()
