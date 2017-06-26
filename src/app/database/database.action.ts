@@ -7,9 +7,3 @@ export class FetchDatabaseAction implements Action {
   constructor(public payload: string) { }
 }
 
-export class FetchDatabaseNamesAction implements Action {
-  type = databaseActionType.fetchNames;
-
-  constructor() {}
-}
-

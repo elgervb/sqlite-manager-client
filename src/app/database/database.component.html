@@ -1,4 +1,3 @@
-<app-database-offcanvas [databaseNames$]="databaseNames$"></app-database-offcanvas>
 
 <ng-container *ngIf="database$ | async; let database;">
   <h1> Database {{database.name}}</h1>

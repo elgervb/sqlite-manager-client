@@ -15,6 +15,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 import { RouterState, RouterStoreModule } from '@ngrx/router-store';
 
+import { DatabaseListModule } from './database-list/database-list.module';
+import { DatabaseListEffects } from './database-list/database-list.effects';
+
 import { EffectsModule } from '@ngrx/effects';
 import { DatabaseEffects } from './database/database.effects';
 import { Database } from './database/database.models';
@@ -41,7 +44,9 @@ export function instrumentOptions() {
     AppRoutingModule,
     BrowserModule,
     CoreModule,
+    DatabaseListModule,
     EffectsModule.run(DatabaseEffects),
+    EffectsModule.run(DatabaseListEffects),
     FormsModule,
     HttpModule,
     SharedModule,

@@ -7,18 +7,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchmap';
 import 'rxjs/add/observable/of';
 
-import { databaseActionType } from './database.actiontype';
+import { databaseListActionType } from './database-list.actiontype';
 
 @Injectable()
-export class DatabaseEffects {
+export class DatabaseListEffects {
 
-  @Effect() fetch$ = this.actions$
-    .ofType(databaseActionType.fetch)
-    .map(action => action.payload)
+  @Effect() fetchNames$ = this.actions$
+    .ofType(databaseListActionType.fetchNames)
     .switchMap(
-      payload => this.http.get(`http://localhost:4000/database/${payload}`)
-      .map(res => ({type: databaseActionType.fetchSuccess, payload: res.json()}))
-      .catch(() => Observable.of({type: databaseActionType.fetchFail}))
+      () => this.http.get('http://localhost:4000/database')
+      .map(res => ({type: databaseListActionType.fetchNamesSuccess, payload: res.json()}))
+      .catch(() => Observable.of({type: databaseListActionType.fetchNamesFail}))
     );
 
   constructor(

@@ -6,7 +6,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 import { routerReducer } from '@ngrx/router-store';
 import { databaseReducer } from './database/database.reducer';
-import { databaseNamesReducer } from './database/database-names.reducer';
+import { databaseNamesReducer } from './database-list/database-names.reducer';
 
 const reducers = {
   database: databaseReducer,
@@ -16,7 +16,6 @@ const reducers = {
 
 const developmentReducer = compose(storeFreeze, combineReducers)(reducers);
 const productionReducer = combineReducers(reducers);
-
 
 export function reducer(state: any, action: any) {
   if (environment.production) {
