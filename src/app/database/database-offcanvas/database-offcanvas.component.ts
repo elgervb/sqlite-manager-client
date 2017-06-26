@@ -11,7 +11,6 @@ export class DatabaseOffcanvasComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

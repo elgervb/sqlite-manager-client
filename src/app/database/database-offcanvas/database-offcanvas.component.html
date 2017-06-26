@@ -4,7 +4,7 @@
     <ul class="menu__group">
       <li class="menu__group__title"> Database</li>
       <li class="menu__item" *ngFor="let databaseName of databaseNames$ | async">
-        <a routerLink="[/database, {{databaseName}}]" class="menu__item__link">{{databaseName}}</a>
+        <a [routerLink]="['/database', databaseName]" class="menu__item__link">{{databaseName}}</a>
       </li>
     </ul>
 
