@@ -9,4 +9,13 @@
     </ul>
 
   </nav>
+
+  <footer class="footer">
+    <button *ngIf="!toggle" class="btn btn--ghost btn--small" (click)="toggle = !toggle">+</button>
+    <form *ngIf="toggle" #form="ngForm" class="form field">
+      <label for="dbname">DB name</label>
+      <input type="text" ngModel #dbName="ngModel" name="dbName" required />
+      <button class="btn btn--ghost btn--small" (click)="addDatabase(dbName.value); toggle = !toggle;" [disabled]="!form.valid">+</button>
+    </form>
+  </footer>
 </app-offcanvas>

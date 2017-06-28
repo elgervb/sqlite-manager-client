@@ -1,0 +1,67 @@
+.btn--ghost, a.btn--ghost {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  color: $grey-regular;
+  padding: 1rem 1.4167rem;
+
+  &:hover, &:focus {
+    background-color: $grey-regular;
+    border: 1px solid currentColor;
+    color: $black-regular;
+  }
+
+  &.btn--red {
+    color: $red-regular;
+    &:hover, &:focus {
+      background-color: $red-regular;
+      color: $white-regular;
+    }
+  }
+  &.btn--blue {
+    color: $blue-regular;
+    &:hover, &:focus {
+      background-color: $blue-regular;
+      color: $white-regular;
+    }
+  }
+  &.btn--green {
+    color: $green-regular;
+    &:hover, &:focus {
+      background-color: $green-regular;
+      color: $white-regular;
+    }
+  }
+  &.btn--turquoise {
+    color: $turquoise-regular;
+    &:hover, &:focus {
+      background-color: $turquoise-regular;
+      color: $white-regular;
+    }
+  }
+  &.btn--orange {
+    color: $orange-regular;
+    &:hover, &:focus {
+      background-color: $orange-regular;
+      color: $white-regular;
+    }
+  }
+  &.btn--yellow {
+    color: $yellow-regular;
+    &:hover, &:focus {
+      background-color: $yellow-regular;
+      color: $white-regular;
+    }
+  }
+  &.btn--purple {
+    color: $purple-regular;
+    &:hover, &:focus {
+      background-color: $purple-regular;
+      color: $white-regular;
+    }
+  }
+
+  &.btn--tiny, &.btn--small {
+    padding: .5rem .8rem;
+  }
+}

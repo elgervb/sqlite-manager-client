@@ -6,6 +6,9 @@ export function databaseNamesReducer(state: string[], action: Action) {
     case databaseListActionType.fetchNamesSuccess :
       return action.payload;
 
+    case databaseListActionType.addDatabaseSuccess:
+      return [...state, action.payload.name];
+
     default:
       return state;
   }

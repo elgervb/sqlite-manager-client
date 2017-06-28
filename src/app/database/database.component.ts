@@ -19,7 +19,9 @@ export class DatabaseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.database$ = this.databaseService.getDatabase(this.route.snapshot.params.name);
+    this.route.params.subscribe(params => {
+      this.database$ = this.databaseService.getDatabase(params.name);
+    });
   }
 
 }

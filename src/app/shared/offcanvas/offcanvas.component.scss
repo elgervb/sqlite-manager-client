@@ -1,8 +1,10 @@
-@import 'src/scss/base/all';
+@import 'src/scss/abstracts/all';
 
 .offcanvas {
   background-color: $blue-regular;
   color: $white-regular;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   min-height: 100vh;
   min-width: 25rem;

@@ -12,6 +12,15 @@ import { databaseListActionType } from './database-list.actiontype';
 @Injectable()
 export class DatabaseListEffects {
 
+  @Effect() addDatabase$ = this.actions$
+    .ofType(databaseListActionType.addDatabase)
+    .map((action) => action.payload)
+    .switchMap(
+      (payload) => this.http.post('http://localhost:4000/database', {dbname: payload})
+      .map(res => ({type: databaseListActionType.addDatabaseSuccess, payload: res.json()}))
+      .catch(() => Observable.of({type: databaseListActionType.addDatabaseFail}))
+    );
+
   @Effect() fetchNames$ = this.actions$
     .ofType(databaseListActionType.fetchNames)
     .switchMap(

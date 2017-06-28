@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import 'scss/abstracts/all';
 @import 'scss/base/all';
 
 @import 'scss/components/buttons';
+@import 'scss/components/button-ghost';
 @import 'scss/components/badge';
 @import 'scss/components/menu';
+@import 'scss/components/forms';
 
 @import 'scss/layout/scrollbars';
