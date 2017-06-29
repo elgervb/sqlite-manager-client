@@ -1,7 +1,12 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
+import { PagevisibilityService } from './pagevisibility.service';
+import { DesktopnotificationsService } from './desktopnotifications.service';
+
 @NgModule({
   providers: [
+    PagevisibilityService,
+    DesktopnotificationsService
   ]
 })
 export class CoreModule {
